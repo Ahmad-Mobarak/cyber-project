@@ -1,0 +1,88 @@
+{
+    "Windows Executable File": {
+        "patterns": [
+            "4D5A9000"
+        ]
+    },
+    "PKZIP Archive File": {
+        "patterns": [
+            "504B0304",
+            "504B0506"
+        ]
+    },
+    "Java Archive File": {
+        "patterns": [
+            "504B03040A000000"
+        ]
+    },
+    "Dalvik Executable File": {
+        "patterns": [
+            "6465780A"
+        ]
+    },
+    "ELF Executable File": {
+        "patterns": [
+            "7f454c4602010100"
+        ]
+    },
+    "Portable Network Graphics File": {
+        "patterns": [
+            "89504E470D0A1A0A"
+        ]
+    },
+    "XZ Archive File": {
+        "patterns": [
+            "FD377A585A0000"
+        ]
+    },
+    "GZIP Archive File": {
+        "patterns": [
+            "1F8B0808D1"
+        ]
+    },
+    "BZIP2 Compressed File": {
+        "patterns": [
+            "425A683931"
+        ]
+    },
+    "RARv5 Compressed File": {
+        "patterns": [
+            "526172211A070100"
+        ]
+    },
+    "RARv4 Compressed File": {
+        "patterns": [
+            "526172211A0700"
+        ]
+    },
+    "Tape Archive File": {
+        "patterns": [
+            "7573746172"
+        ]
+    },
+    "Microsoft Word 2007+": {
+        "patterns": [
+            "504B030414000600"
+        ]
+    },
+    "Composite Document File": {
+        "patterns": [
+            "D0CF11E0A1B11AE1"
+        ]
+    },
+    "Portable Document Format (PDF)": {
+        "patterns": [
+            "255044462d"
+        ]
+    },
+    "Microsoft Cabinet Archive": {
+        "patterns": [
+            "4d534346000000"
+        ]
+    },
+    "Rich Text Format": {
+        "patterns": [
+            "7b5c72746631"
+        ]
+    }
+}
