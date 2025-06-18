@@ -28,6 +28,9 @@ from gui.home_tab import HomeTab
 from gui.utils_tab import UtilsTab
 from gui.dynamic_tab import DynamicTab
 from gui.document_tab import DocumentTab
+from gui.archive_tab import ArchiveTab
+from gui.email_tab import EmailTab
+from gui.pcap_tab import PCAPTab
 
 class AnsiToHtmlConverter:
     def __init__(self):
@@ -404,12 +407,18 @@ class MainWindow(QMainWindow):
         self.dynamic_tab = DynamicTab(self)
         self.document_tab = DocumentTab(self)
         self.utils_tab = UtilsTab(self)
+        self.archive_tab = ArchiveTab(self)
+        self.email_tab = EmailTab(self)
+        self.pcap_tab = PCAPTab(self)
         
         self.tabs.addTab(self.home_tab, "الرئيسية")
         self.tabs.addTab(self.analyzer_tab, "التحليل الثابت")
         self.tabs.addTab(self.dynamic_tab, "التحليل الديناميكي")
         self.tabs.addTab(self.document_tab, "تحليل المستندات")
         self.tabs.addTab(self.utils_tab, "الأدوات")
+        self.tabs.addTab(self.archive_tab, "Archive Analysis")
+        self.tabs.addTab(self.email_tab, "Email Analysis")
+        self.tabs.addTab(self.pcap_tab, "PCAP Analysis")
         
         # Add tabs to main layout
         self.main_layout.addWidget(self.tabs)
@@ -437,7 +446,17 @@ class MainWindow(QMainWindow):
             
         # Get Qu1cksc0pe path
         self.sc0pe_path = os.getcwd()
-        
+
+        # Ensure .path_handler file exists for modules that might need it
+        path_handler_file = os.path.join(self.sc0pe_path, ".path_handler")
+        try:
+            with open(path_handler_file, "w") as f:
+                f.write(self.sc0pe_path)
+        except IOError as e:
+            print(f"Error: Could not write .path_handler file: {e}")
+            # Optionally, show a QMessageBox to the user if this is critical
+            # QMessageBox.critical(self, "Error", f"Could not write .path_handler file at {path_handler_file}.\nSome functionalities might not work correctly.")
+
     def apply_style(self):
         """Apply dark theme styling"""
         self.setStyleSheet(get_stylesheet())
